@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../assets/Background+Shadow.png'
 
 export default function Navbar() {
@@ -7,7 +6,7 @@ export default function Navbar() {
         <div className='flex justify-between items-center px-10 py-5 contain-contenter mx-auto'>
           <div className='flex gap-2 items-center font-bold '>
           <img src={logo} alt="Logo" className='' />
-          <h2>Dev <span className='text-pink-500'>Stack</span></h2>
+          <a href="#" className='text-xl'>Dev <span className='text-pink-500'>Stack</span></a>
           </div>
           <div >
             <ul className='flex gap-8  '>

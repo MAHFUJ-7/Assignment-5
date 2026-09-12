@@ -25,7 +25,7 @@ const TechnologyCard = ({
 
   const handleAddToStack = (tech: ITechnologies) => {
     setCountSelected(countSelected + 1);
-    toast.success(`${tech.name} added to stack!`);
+    toast.success(`${tech.name} added to stack!`, {position:"bottom-right" });
     setSelectedTechnologies([...selectedTechnologies, tech]);
   };
 
@@ -47,7 +47,7 @@ const TechnologyCard = ({
               backgroundColor: `${technologies.color}33`,
               border: `1px solid ${technologies.color}CC`,
             }}
-            className=" p-2 m-0.5 rounded-full"
+            className=" p-2 m-0.5 rounded-[30px]"
           >
             {technologies.badge}
           </h1>

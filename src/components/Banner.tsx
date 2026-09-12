@@ -1,7 +1,7 @@
 import bannerImage from "../assets/banner-stack.png";
 const Banner = () => {
   return (
-    <div className="container mx-auto px-5">
+    <div className="container mx-auto p-10">
       <div className="flex items-center justify-between flex-col md:flex-row">
       <div className=" mt-20 text-center md:text-left">
         <h1 className="font-bold text-5xl py-10">

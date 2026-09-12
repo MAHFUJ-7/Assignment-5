@@ -14,7 +14,7 @@ const StackCard = ({ selectedTechnologies, countSelected, setCountSelected, setS
 
   const handleAllRemove = () => {
     setSelectedTechnologies([]);
-    toast.dismiss(`All technologies removed from stack!`);
+    toast.success(<span className="text-red-500">All technologies removed from stack!</span>,{position:"bottom-right"});
   };
 
   const handleCount = (tech: ITechnologies) => {
@@ -22,7 +22,7 @@ const StackCard = ({ selectedTechnologies, countSelected, setCountSelected, setS
     setSelectedTechnologies(
       selectedTechnologies.filter((t) => t.id !== tech.id),
     );
-    toast.dismiss(`${tech.name} added to stack!`)
+    toast.success(`${tech.name} removed from stack!`, {position:"bottom-right" });
   };
 
   return (
