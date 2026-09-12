@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import Technologies from './components/Technologies'
-import Footer from './components/Footer'
+import Footer from '../../temp/Footer'
 
 const App = () => {
   return (
