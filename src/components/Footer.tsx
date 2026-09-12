@@ -50,16 +50,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between"></div>
+      <div className="flex justify-between items-center border-t border-[#E2E8F0] px-10 py-1 pb-2">
         <div className="text-[#94A3B8] mt-5">
           <p>© 2026 Dev Stack. All rights reserved.</p>
         </div>
-        <div>
-            <ul className="flex gap-5 text-[#94A3B8] mt-5">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </ul>
-        </div>
+        <ul className="flex gap-5 text-[#94A3B8] mt-5 pl-5 ">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </ul>
       </div>
     </div>
   );
