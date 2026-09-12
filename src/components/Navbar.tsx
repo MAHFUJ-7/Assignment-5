@@ -3,7 +3,7 @@ import logo from '../assets/Background+Shadow.png'
 export default function Navbar() {
   return (
     <div >
-        <div className='flex justify-between items-center px-10 py-5 contain-contenter mx-auto'>
+        <div className='flex justify-between items-center px-10 py-5 contain-contenter mx-auto border-b border-[#E2E8F0]'>
           <div className='flex gap-2 items-center font-bold '>
           <img src={logo} alt="Logo" className='' />
           <a href="#" className='text-xl'>Dev <span className='text-pink-500'>Stack</span></a>

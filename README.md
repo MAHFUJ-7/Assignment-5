@@ -1,78 +1,62 @@
-# React + TypeScript + Vite
+# Dev Stack Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that helps developers build their ideal development stack by exploring technologies across different categories. Users can add technologies to their stack, remove them, and view their selected items in a sidebar panel.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Dev Stack Builder allows users to explore frontend, backend, database, and tooling technologies. Pick one technology per category to build your ideal development stack. The app provides real-time feedback through toast notifications and a responsive sidebar showing selected items.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React.js** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Vite** - Build tool
+- **React-Toastify** - Toast notifications
+- **React Icons** - Icon library
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Features
 
-## Expanding the ESLint configuration
+1. **Technology Explorer** - Browse 15+ technologies across 8 categories (Frontend, Backend, Database, Language, Styling, DevOps, Tools, Mobile) with icons, ratings, and difficulty levels.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Stack Builder** - Add technologies to your stack, view them in a sidebar with remove buttons, and clear the entire stack with one click. Duplicate additions are prevented with warning alerts.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. **Responsive Design** - Fully responsive layout that works on mobile (1 column), tablet (2 columns), and desktop (3 columns) with a sticky navbar and mobile-friendly navigation.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## React Questions
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### What is JSX, and why is it used in React?
 
-```
+JSX (JavaScript XML) is a syntax extension that allows writing HTML-like code inside JavaScript. It is used in React because it makes the code more readable and easier to write. Instead of using `React.createElement()`, developers can write familiar HTML tags directly in JavaScript, which Babel then compiles into valid JavaScript.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### What is the difference between props and state?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Props** are read-only data passed from parent to child components. They are external and cannot be modified by the receiving component. **State** is local, mutable data managed within a component. State can be updated using `useState`, triggering a re-render, while props remain constant throughout the component's lifecycle.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### What does the useState hook do, and where did you use it in this project?
 
-```
+`useState` is a React hook that adds state to functional components. It returns the current state value and a function to update it. In this project, I used `useState` in `Technologies.tsx` to manage `selectedTechnologies`, `countSelected`, and `techPromise`. In `TechnologyCard.tsx`, I derived selection status from props rather than using local state.
+
+### What does the useEffect hook do, and why did you need it to load the JSON data?
+
+`useEffect` runs side effects after a component renders. It is needed to load JSON data because fetching data should happen once when the component mounts, not on every render. Without `useEffect`, calling `fetch()` directly in the component body would cause infinite re-renders or fetch on every render, creating new promises constantly.
+
+### Why does every item in a .map() list need a unique key prop?
+
+Every item in a `.map()` list needs a unique `key` prop so React can efficiently identify which items changed, were added, or were removed. Without unique keys, React may re-render the entire list unnecessarily, causing performance issues and potential UI bugs like incorrect component state being applied to wrong items.
+
+### What is conditional rendering? Show one place you used it (example: the empty stack message).
+
+Conditional rendering means displaying different UI based on a condition. In `Stack.tsx`, I used conditional rendering to show either an empty message or the stack items: `{selectedTechnologies.length === 0 ? <p>Your stack is empty.</p> : <StackCard .../>}`. This shows a friendly message when no items are selected, and the stack list when items exist.
+
+### How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+**Parent to child**: Data is passed via props. For example, `Technologies.tsx` passes `selectedTechnologies` and `setSelectedTechnologies` as props to `TechnologyCard` and `Stack`. **Child to parent**: A child sends data back by calling a function passed as a prop. For example, `TechnologyCard` calls `setSelectedTechnologies` (passed from parent) to add items to the stack, and `Stack` passes `handleCount` to `StackCard` so removing an item updates the parent's state.
+
+## Deployment
+
+Deployed on Vercel.
+
+## Live Site
+
+[Dev Stack Builder - Live Site]()
