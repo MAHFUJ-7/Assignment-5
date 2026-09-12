@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import type { ITechnologies } from "../types/types";
-import Stack from "../../../temp/Stack";
+import Stack from "./Stack";
 import AvailableTechnology from "./AvailableTechnology";
 
 const fetchTechnologies = async (): Promise<ITechnologies[]> => {
