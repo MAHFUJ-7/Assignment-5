@@ -22,5 +22,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/components/Stack.tsx", "../temp/StackCard.tsx", "src/components/Footer.tsx", "src/components/Technologies.tsx", "src/components/TechnologyCard.tsx", "src/components/AvailableTechnology.tsx"]
+  "include": ["src"]
 }

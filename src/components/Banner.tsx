@@ -19,10 +19,10 @@ const Banner = () => {
           next project.
         </p>
         <div className="flex gap-5 justify-center md:justify-start mt-10">
-          <button className="bg-linear-to-r from-[#F97316] to-[#EC4899] text-white py-1 px-3 rounded ">
+          <button className="bg-linear-to-r from-[#F97316] to-[#EC4899] text-white py-1 px-3 rounded-[8px] ">
             Explore Technologies
           </button>
-          <button className="border p-2 rounded ">
+          <button className="border p-2 rounded-lg border-[#E2E8F0] hover:bg-[#F1F5F9] transition-colors duration-300">
             Learn More
           </button>
         </div>

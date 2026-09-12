@@ -2,7 +2,7 @@ import logo from '../assets/Background+Shadow.png'
 
 export default function Navbar() {
   return (
-    <div >
+    <div className="sticky top-0 z-50 bg-white">
         <div className='flex justify-between items-center px-10 py-5 contain-contenter mx-auto border-b border-[#E2E8F0]'>
           <div className='flex gap-2 items-center font-bold '>
           <img src={logo} alt="Logo" className='' />

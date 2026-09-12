@@ -28,8 +28,8 @@ const StackCard = ({ selectedTechnologies, countSelected, setCountSelected, setS
   return (
     <div>
         {selectedTechnologies.map((tech: ITechnologies) => (
-        <div className="flex justify-between items-center p-4 border border-gray-300 rounded-lg mb-4" key={tech.id}>
-          <div className="flex items-center gap-4">
+        <div className="flex justify-between items-center p-4 border border-gray-300 rounded-lg mb-4 flex-wrap" key={tech.id}>
+          <div className="flex items-center gap-4 ">
             <img src={tech.icon} alt={tech.name} className="h-10 w-10" />
             <div>
               <h1 className="text-lg font-bold text-[#0F172A]">{tech.name}</h1>
