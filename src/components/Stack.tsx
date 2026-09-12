@@ -1,6 +1,6 @@
 import React from "react";
 import type { ITechnologies } from "../types/types";
-import StackCard from "../../../temp/StackCard";
+import StackCard from "./StackCard";
 interface StackProps {
   selectedTechnologies: ITechnologies[];
   setSelectedTechnologies: React.Dispatch<
