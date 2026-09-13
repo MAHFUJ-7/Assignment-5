@@ -22,7 +22,7 @@ const StackCard = ({ selectedTechnologies, countSelected, setCountSelected, setS
     setSelectedTechnologies(
       selectedTechnologies.filter((t) => t.id !== tech.id),
     );
-    toast.success(`${tech.name} removed from stack!`, {position:"bottom-right" });
+    toast.success(<span className="text-red-500">{tech.name} removed from stack!</span>, {position:"bottom-right" });
   };
 
   return (
