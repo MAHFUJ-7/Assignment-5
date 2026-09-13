@@ -19,9 +19,9 @@ I made this app because I was always confused about which frontend, backend, and
 
 1. **Explore All Technologies** - You can see 15 different tools like React, Node.js, PostgreSQL, etc. Each one shows its icon, description, rating, and difficulty level. Just click "Add to Stack" and it goes in your collection.
 
-2. **My Stack Side Panel** - On the right side you'll see everything you picked. Click the X button to remove anything, or hit "Remove All" to start over. If you try to add the same tool twice, a warning pops up - I don't want you getting confused!
+2. **My Stack Side Panel** - On the right side you'll see everything you picked. Click the X button to remove anything, or hit "Remove All" to start over. If you try to add the same tool again, the button is already disabled so it won't let you.
 
-3. **Works on Your Phone** - I made sure it looks good on phones, tablets, and computers. On mobile, you get a hamburger menu instead of all those links.
+3. **Toast Notifications** - Every action gives you a little popup message. Adding shows a success toast and removing items gives you feedback too.
 
 ## React Stuff
 
@@ -32,19 +32,19 @@ JSX lets me write HTML in my JavaScript files. Instead of React.createElement() 
 Props are like gifts - they come from the parent component and the child can't change them. State is like sticky notes - the component itself writes on them and updates itself when something changes.
 
 **useState Hook**
-This hook lets functional components have their own memory. I used it in Technologies.jsx to keep track of what you've selected and how many tools are in your stack.
+This hook lets functional components have their own memory. I used it in Technologies.jsx to keep track of what you've selected, how many tools are in your stack, and the promise that loads the tech data.
 
-**useEffect and JSON**
-useEffect is like a timer that runs after everything renders. I used it to fetch the technologies from data.json when the page first loads. Without it, the fetch would run again every time you click something!
+**use Hook**
+I used React's `use` hook to unwrap the Promise that loads the JSON data. It lets me access the data inside a component without useEffect.
 
 **Why the Key Prop?**
 When React sees a list of items, it needs keys to know which ones are new, deleted, or moved. It's like giving each item a name tag so React doesn't get confused when things change.
 
 **Conditional Rendering**
-I used this in the Stack component to show different things: when you haven't picked anything it says "Your stack is empty", but when you have tools it shows them in a nice list.
+I used this in the Stack component to show different things: when you haven't picked anything it says "Your stack is empty", but when you have tools it shows them in a nice list. I also use it for the button text - "Add to Stack" vs "✓ Added to Stack" based on whether the tech is already selected.
 
 **Passing Data Up and Down**
-Parent components send data down through props. When a child needs to tell the parent something, it calls the function it received as a prop. For example, when you click remove on a tool, the StackCard calls the handleCount function that was passed to it.
+Parent components send data down through props. For example, Technologies passes `selectedTechnologies` down to TechnologyCard. When a child needs to tell the parent something, it calls the function it received as a prop. TechnologyCard calls `setSelectedTechnologies` to add items to the stack.
 
 ## How to Run This
 

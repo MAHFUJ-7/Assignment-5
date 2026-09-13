@@ -6,8 +6,8 @@ const Banner = () => {
       <div className=" mt-20 text-center md:text-left">
         <h1 className="font-bold text-5xl py-10">
           Build Your Ideal
-          <br />{" "}
-          <span className="bg-linear-to-r from-[#FF5722] via-50% via-[#D81B7E] to-[#7C3AED] text-transparent bg-clip-text">
+          <br />
+          <span className="gradient-text">
             Development Stack
           </span>
         </h1>
@@ -19,7 +19,7 @@ const Banner = () => {
           next project.
         </p>
         <div className="flex gap-5 justify-center md:justify-start mt-10">
-          <button className="bg-linear-to-r from-[#F97316] to-[#EC4899] text-white py-1 px-3 rounded-[8px] ">
+          <button className="gradient-btn py-1 px-3 rounded-lg ">
             Explore Technologies
           </button>
           <button className="border p-2 rounded-lg border-[#E2E8F0] hover:bg-[#F1F5F9] transition-colors duration-300">

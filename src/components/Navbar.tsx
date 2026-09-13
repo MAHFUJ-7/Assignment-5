@@ -6,7 +6,7 @@ export default function Navbar() {
         <div className='flex justify-between items-center px-10 py-5 contain-contenter mx-auto border-b border-[#E2E8F0]'>
           <div className='flex gap-2 items-center font-bold '>
           <img src={logo} alt="Logo" className='' />
-          <a href="#" className='text-xl'>Dev <span className='text-pink-500'>Stack</span></a>
+          <a href="#" className='text-xl'>Dev <span className="gradient-text">Stack</span></a>
           </div>
           <div >
             <ul className='flex gap-8  '>
@@ -19,7 +19,7 @@ export default function Navbar() {
           </div>
           <div className='flex gap-5 hover:cursor-pointer'>
             <button>Sign In</button>
-            <button className='bg-pink-500 text-white px-4 py-2 rounded-full'>Sign Up</button>
+            <button className='gradient-btn  px-4 py-2 rounded-full'>Sign Up</button>
           </div>
         </div>
       

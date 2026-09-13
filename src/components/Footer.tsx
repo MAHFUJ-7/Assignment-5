@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="flex gap-2 items-center font-bold mb-5 mt-10 ">
             <img src={logo} alt="Logo" className="" />
             <h2>
-              Dev <span className="text-pink-500">Stack</span>
+              Dev <span className="gradient-text">Stack</span>
             </h2>
           </div>
           <p className="text-[#64748B]">

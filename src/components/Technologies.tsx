@@ -30,7 +30,7 @@ function Technologies() {
           Pick one technology per category to build your ideal stack.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-5 mt-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 xl:grid-cols-3 gap-5 mt-10 ">
         <div className="col-span-3 md:col-span-2 lg:col-span-3">
           <React.Suspense fallback={<div>Loading...</div>}>
             <AvailableTechnology  technology={techPromise} selectedTechnologies={selectedTechnologies} setSelectedTechnologies={setSelectedTechnologies} countSelected={countSelected} setCountSelected={setCountSelected} />
